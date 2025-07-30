@@ -2,15 +2,13 @@ import Homepage from "../../models/homePage.js";
 
 const createHomepage = async (req, res) => {
   try {
-    console.log("IMAGE", req.files);
-    console.log("BODY", req.body);
     let banner_image1 = req.files[0].filename ? req.files[0].filename : "";
-    let banner_image1_mobile = req.files[1].filename ? req.files[0].filename : "";
-    let banner_image2 = req.files[2].filename ? req.files[1].filename : "";
-    let banner_image2_mobile = req.files[3].filename ? req.files[1].filename : "";
-    let banner_image3 = req.files[4].filename ? req.files[2].filename : "";
-    let banner_image3_mobile = req.files[5].filename ? req.files[2].filename : "";
-    let logo = req.files[3].filename ? req.files[3].filename : "";
+    let banner_image1_mobile = req.files[1].filename ? req.files[1].filename : "";
+    let banner_image2 = req.files[2].filename ? req.files[2].filename : "";
+    let banner_image2_mobile = req.files[3].filename ? req.files[3].filename : "";
+    let banner_image3 = req.files[4].filename ? req.files[4].filename : "";
+    let banner_image3_mobile = req.files[5].filename ? req.files[5].filename : "";
+    let logo = req.files[6].filename ? req.files[6].filename : "";
 
     const data = {
       banner_image1: banner_image1,
