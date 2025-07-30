@@ -1,10 +1,10 @@
-import TestDrive from "../../models/testDrive.js";
+import TestDrivePage from "../../models/testDrivePage.js";
 
-const updateTestDrive = async (req, res) => {
+const updateTestDrivePage = async (req, res) => {
   try {
     const id = req.params.id;
 
-    const test = await TestDrive.findOne({
+    const test = await TestDrivePage.findOne({
       where: {
         id: id,
       },
@@ -13,20 +13,16 @@ const updateTestDrive = async (req, res) => {
     if (test) {
       const data = {
         id: id,
-        country: req.body.country,
-        emirate: req.body.emirate,
-        gender: req.body.gender,
-        name: req.body.name,
-        phoneNumber: req.body.phoneNumber,
-        email: req.body.email,
-        modelId: req.body.modelId,
+        meta_description: req.body.meta_description,
+        meta_title: req.body.meta_title,
+        meta_keywords: req.body.meta_keywords,
       };
 
-      const testDrive = await TestDrive.update(data, { where: { id: id } });
+      const testDrivePage = await TestDrivePage.update(data, { where: { id: id } });
       return res.json({
         status: true,
         message: "Test Drive Update Successfully .",
-        data: testDrive,
+        data: testDrivePage,
         code: 200,
       });
     } else {
@@ -41,4 +37,4 @@ const updateTestDrive = async (req, res) => {
   }
 };
 
-export default updateTestDrive;
+export default updateTestDrivePage;

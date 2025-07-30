@@ -198,6 +198,9 @@ const updateModel = async (req, res) => {
       normalSections: normalSections.length ? normalSections : existingModel.normalSections,
       advancedSections: advancedSections.length ? advancedSections : existingModel.advancedSections,
       categoryId: req.body.categoryId || existingModel.categoryId,
+      meta_description: req.body.meta_description,
+      meta_title: req.body.meta_title,
+      meta_keywords: req.body.meta_keywords,
     };
 
     // Update the model in the database

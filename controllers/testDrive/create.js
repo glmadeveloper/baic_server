@@ -9,11 +9,14 @@ const salesMail = async (req, res) => {
     let dataGender;
     if (req.body.gender === formGender) {
       dataGender = 'Mr';
+    } else if (req.body.gender === 'Company') {
+      dataGender = 'Company';
     } else {
       dataGender = 'Ms';
     }
     const data = {
       country: req.body.country,
+      emirate: req.body.emirate,
       gender: req.body.gender,
       name: req.body.name,
       phoneNumber: req.body.phoneNumber,
@@ -32,8 +35,8 @@ const salesMail = async (req, res) => {
         pass: 'Tot66339', // Replace with your SMTP password
       },
     });
-const id = data['modelId']; // Ensure `modelId` is a number
-// console.log('modelId:', modelId);
+    const id = data['modelId']; // Ensure `modelId` is a number
+    // console.log('modelId:', modelId);
     const model = await Model.findOne({
       where: { id: id },
       attributes: ['name'],
@@ -58,6 +61,7 @@ const id = data['modelId']; // Ensure `modelId` is a number
       <p>Customer responses have been received through the Test Drive form.</p>
       <p>* Title:- ${data.gender}</p>  
       <p>* Country:- ${data.country}</p> 
+      <p>* Emirate:- ${data.emirate}</p> 
       <p>* Name:- ${data.name}</p> 
       <p>* Email:- ${data.email}</p> 
       <p>* Mobile:-  ${data.phoneNumber}</p>  

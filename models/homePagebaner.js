@@ -3,32 +3,41 @@ import db from "../config/database.js";
 
 const { DataTypes } = Sequelize;
 
-const TestDrive = db.define(
-  "testDrive",
+const Homepagebaner = db.define(
+  "homepagebanner",
   {
-    country: {
+    image: {
       type: DataTypes.STRING,
     },
-    emirate: {
+    title_en: {
       type: DataTypes.STRING,
     },
-    gender: {
+    title_ar: {
       type: DataTypes.STRING,
     },
-    name: {
+    description_en: {
       type: DataTypes.STRING,
     },
-    phoneNumber: {
-      type: DataTypes.INTEGER,
-    },
-    email: {
+    description_ar: {
       type: DataTypes.STRING,
     },
-    modelId: {
+    button1: {
+      type: DataTypes.STRING,
+    },
+    button1_url: {
+      type: DataTypes.STRING,
+    },
+    button2: {
+      type: DataTypes.STRING,
+    },
+    button2_url: {
+      type: DataTypes.STRING,
+    },
+    homepageId: {
       type: DataTypes.INTEGER,
       references: {
-        model: "model",
-        key: "id",
+        model: 'homepage',
+        key: 'id',
       },
     },
   },
@@ -37,9 +46,8 @@ const TestDrive = db.define(
     timestamps: true,
   }
 );
-
 (async () => {
   await db.sync();
 })();
 
-export default TestDrive;
+export default Homepagebaner;

@@ -42,6 +42,9 @@ const createCapitalBeauty = async (req, res) => {
       image3Description: req.body.image3Description,
       image3Description_ar: req.body.image3Description_ar,
       image4: image4,
+      meta_description: req.body.meta_description,
+      meta_title: req.body.meta_title,
+      meta_keywords: req.body.meta_keywords,
     };
     const capitalBeauty = await CapitalBeauty.create(data);
 

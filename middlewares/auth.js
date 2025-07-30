@@ -14,7 +14,7 @@ const verifyToken = async (req, res, next) => {
 
       await jwt.verify(Authorization, secretKey, async function (err, decoded) {
         if (err !== null) {
-          return res.json({ status: false, message: err.message, code: 200 });
+          return res.json({ status: false, message: err.message, code: 500 });
         }
         if (decoded) {
           req.user = decoded;

@@ -276,6 +276,15 @@ const ResearchAndDevelopment = db.define(
     section14_image: {
       type: DataTypes.STRING,
     },
+    meta_description: {
+      type: DataTypes.TEXT,
+    },
+    meta_title: {
+      type: DataTypes.STRING,
+    },
+    meta_keywords: {
+      type: DataTypes.STRING,
+    },
   },
   {
     freezeTableName: true,

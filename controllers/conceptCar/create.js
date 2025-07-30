@@ -96,6 +96,9 @@ const createConceptCar = async (req, res) => {
       section_10_image4: section_10_image4,
       section_10_title4: req.body.section_10_title4,
       section_10_title4_ar: req.body.section_10_title4_ar,
+      meta_description: req.body.meta_description,
+      meta_title: req.body.meta_title,
+      meta_keywords: req.body.meta_keywords,
     };
     const conceptCar = await ConceptCar.create(data);
 

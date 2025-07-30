@@ -26,6 +26,9 @@ const createAfterSalesService = async (req, res) => {
       featureSubTitle: req.body.featureSubTitle,
       featureSubTitle_ar: req.body.featureSubTitle_ar,
       featureimage: featureImage,
+      meta_description: req.body.meta_description,
+      meta_title: req.body.meta_title,
+      meta_keywords: req.body.meta_keywords,
     };
     const afterSalesService = await AfterSalesService.create(data);
 

@@ -70,6 +70,8 @@ import getOneTestDrive from "../controllers/testDrive/getOne.js";
 import getAllTestDrive from "../controllers/testDrive/getAll.js";
 import updateTestDrive from "../controllers/testDrive/update.js";
 import deleteTestDrive from "../controllers/testDrive/delete.js";
+import getOneTestDrivePage from "../controllers/testDrivePaeg/getOne.js";
+import updateTestDrivePage from "../controllers/testDrivePaeg/update.js";
 import createResearch from "../controllers/researchAndDevelopment/create.js";
 import getOneResearch from "../controllers/researchAndDevelopment/getOne.js";
 import getAllResearch from "../controllers/researchAndDevelopment/getAll.js";
@@ -361,6 +363,10 @@ router.get("/test-drive/:id", getOneTestDrive);
 router.get("/test-drive", getAllTestDrive);
 router.put("/test-drive/:id", verifyToken, updateTestDrive);
 router.delete("/test-drive/:id", verifyToken, deleteTestDrive);
+
+// Test Drive Page Routes ==================>
+router.get("/test-drive-page/:id", getOneTestDrivePage);
+router.put("/test-drive-page/:id", verifyToken, updateTestDrivePage);
 
 // RESEARCH AND DEVELOPMENT =========>
 

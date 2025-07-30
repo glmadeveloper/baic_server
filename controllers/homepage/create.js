@@ -5,14 +5,16 @@ const createHomepage = async (req, res) => {
     console.log("IMAGE", req.files);
     console.log("BODY", req.body);
     let banner_image1 = req.files[0].filename ? req.files[0].filename : "";
-    let banner_image2 = req.files[1].filename ? req.files[1].filename : "";
-    let banner_image3 = req.files[2].filename ? req.files[2].filename : "";
+    let banner_image1_mobile = req.files[1].filename ? req.files[0].filename : "";
+    let banner_image2 = req.files[2].filename ? req.files[1].filename : "";
+    let banner_image2_mobile = req.files[3].filename ? req.files[1].filename : "";
+    let banner_image3 = req.files[4].filename ? req.files[2].filename : "";
+    let banner_image3_mobile = req.files[5].filename ? req.files[2].filename : "";
     let logo = req.files[3].filename ? req.files[3].filename : "";
-
-    //   console.log("IMAGE", req.files);
 
     const data = {
       banner_image1: banner_image1,
+      banner_image1_mobile: banner_image1_mobile,
       banner_image1_title: req.body.banner_image1_title,
       banner_image1_title_ar: req.body.banner_image1_title_ar,
       banner_image1_description: req.body.banner_image1_description,
@@ -22,6 +24,7 @@ const createHomepage = async (req, res) => {
       banner_image1_button2: req.body.banner_image1_button2,
       banner_image1_button2_url: req.body.banner_image1_button2_url,
       banner_image2: banner_image2,
+      banner_image2_mobile: banner_image2_mobile,
       banner_image2_title: req.body.banner_image2_title,
       banner_image2_title_ar: req.body.banner_image2_title_ar,
       banner_image2_description: req.body.banner_image2_description,
@@ -31,6 +34,7 @@ const createHomepage = async (req, res) => {
       banner_image2_button2: req.body.banner_image2_button2,
       banner_image2_button2_url: req.body.banner_image2_button2_url,
       banner_image3: banner_image3,
+      banner_image3_mobile: banner_image3_mobile,
       banner_image3_title: req.body.banner_image3_title,
       banner_image3_title_ar: req.body.banner_image3_title_ar,
       banner_image3_description: req.body.banner_image3_description,
@@ -43,6 +47,9 @@ const createHomepage = async (req, res) => {
       facebook_link: req.body.facebook_link,
       linkedin_link: req.body.linkedin_link,
       logo: logo,
+      meta_description: req.body.meta_description,
+      meta_title: req.body.meta_title,
+      meta_keywords: req.body.meta_keywords,
     };
     const homepage = await Homepage.create(data);
 

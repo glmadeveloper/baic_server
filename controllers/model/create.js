@@ -44,7 +44,7 @@ const createModel = async (req, res) => {
     await mkdirp(uploadDir); // Create the directory if it doesn't exist
     console.log('sdsdsdsds2222');
 
-    
+
 
     let image1Path = "";
 
@@ -99,15 +99,15 @@ const createModel = async (req, res) => {
           const image_ar_file = req.files.find(file => file.fieldname === `normalSections[${index}][image_ar]`);
 
           // Save images to the directory and store the full path in the database
-         // Save images to the directory and store the full path in the database
-        
-         if (image_en_file) {
-          normalSectionObj.image_en = image_en_file.filename;
-        }
+          // Save images to the directory and store the full path in the database
 
-        if (image_ar_file) {
-          normalSectionObj.image_ar = image_ar_file.filename;
-        }
+          if (image_en_file) {
+            normalSectionObj.image_en = image_en_file.filename;
+          }
+
+          if (image_ar_file) {
+            normalSectionObj.image_ar = image_ar_file.filename;
+          }
 
         }
 
@@ -127,7 +127,7 @@ const createModel = async (req, res) => {
 
     if (req.body.designType === "advanced" && req.body.advancedSections) {
       console.log(req.body)
-      const requiredSections = ['section1', 'section2', 'section3','section4'];
+      const requiredSections = ['section1', 'section2', 'section3', 'section4'];
 
       requiredSections.forEach((section) => {
         if (Array.isArray(req.body.advancedSections[section])) {
@@ -145,8 +145,6 @@ const createModel = async (req, res) => {
             if (req.files) {
               const image_en_file = req.files.find(file => file.fieldname === `advancedSections[${section}][${i}][image_en]`);
               const image_ar_file = req.files.find(file => file.fieldname === `advancedSections[${section}][${i}][image_ar]`);
-              console.log(image_en_file,'en')
-              console.log(image_ar_file,'ar')
 
               if (image_en_file) {
                 advancedSectionObj.image_en = image_en_file.filename;
@@ -246,12 +244,14 @@ const createModel = async (req, res) => {
       normalSections: normalSections.length ? normalSections : null,
       advancedSections: advancedSections.length ? advancedSections : null,
       categoryId: req.body.categoryId || null,
+      meta_description: req.body.meta_description,
+      meta_title: req.body.meta_title,
+      meta_keywords: req.body.meta_keywords,
     };
 
     const model = await Model.create(data);
 
     if (model) {
-      console.log(model,'created')
       return res.json({
         status: true,
         message: "Model Created Successfully.",
@@ -259,7 +259,6 @@ const createModel = async (req, res) => {
         code: 200,
       });
     } else {
-      console.log(model,'failed')
       return res.json({
         status: false,
         message: "Model is Not Created",

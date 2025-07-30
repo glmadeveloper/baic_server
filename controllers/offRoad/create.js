@@ -33,6 +33,9 @@ const createOffRoad = async (req, res) => {
       image3Title_ar: req.body.image3Title_ar,
       image3Description: req.body.image3Description,
       image3Description_ar: req.body.image3Description_ar,
+      meta_description: req.body.meta_description,
+      meta_title: req.body.meta_title,
+      meta_keywords: req.body.meta_keywords,
     };
     const offRoad = await OffRoad.create(data);
 

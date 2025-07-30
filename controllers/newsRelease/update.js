@@ -54,6 +54,9 @@ const updateNewsRelease = async (req, res) => {
         description: req.body.description,
         description_ar: req.body.description_ar,
         otherNews: req.body.otherNews,
+        meta_description: req.body.meta_description,
+        meta_title: req.body.meta_title,
+        meta_keywords: req.body.meta_keywords,
         image: image,
       };
 

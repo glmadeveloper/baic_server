@@ -52,6 +52,15 @@ const AfterSalesService = db.define(
     featureimage: {
       type: DataTypes.STRING,
     },
+    meta_description: {
+      type: DataTypes.TEXT,
+    },
+    meta_title: {
+      type: DataTypes.STRING,
+    },
+    meta_keywords: {
+      type: DataTypes.STRING,
+    },
   },
   {
     freezeTableName: true,

@@ -3,21 +3,9 @@ import db from "../config/database.js";
 
 const { DataTypes } = Sequelize;
 
-const CookiePolicy = db.define(
-  "cookiePolicy",
+const TestDrivePage = db.define(
+  "testDrivePage",
   {
-    title: {
-      type: DataTypes.STRING,
-    },
-    title_ar: {
-      type: DataTypes.STRING,
-    },
-    description: {
-      type: DataTypes.TEXT("long"),
-    },
-    description_ar: {
-      type: DataTypes.TEXT("long"),
-    },
     meta_description: {
       type: DataTypes.TEXT,
     },
@@ -38,4 +26,4 @@ const CookiePolicy = db.define(
   await db.sync();
 })();
 
-export default CookiePolicy;
+export default TestDrivePage;

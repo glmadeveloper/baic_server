@@ -125,6 +125,9 @@ const createResearch = async (req, res) => {
       section14_description: req.body.section14_description,
       section14_description_ar: req.body.section14_description_ar,
       section14_image: section14_image,
+      meta_description: req.body.meta_description,
+      meta_title: req.body.meta_title,
+      meta_keywords: req.body.meta_keywords,
     };
     const researchAndDevelopment = await ResearchAndDevelopment.create(data);
 

@@ -245,6 +245,9 @@ const updateOverview = async (req, res) => {
       section3_description2_ar: req.body.section3_description2_ar,
       section3_description3: req.body.section3_description3,
       section3_description3_ar: req.body.section3_description3_ar,
+      meta_description: req.body.meta_description,
+      meta_title: req.body.meta_title,
+      meta_keywords: req.body.meta_keywords,
     };
 
     await OverView.update(data, { where: { id } });

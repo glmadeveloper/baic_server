@@ -14,6 +14,9 @@ const createNewsRelease = async (req, res) => {
       description_ar: req.body.description_ar,
       otherNews: req.body.otherNews,
       image: image,
+      meta_description: req.body.meta_description,
+      meta_title: req.body.meta_title,
+      meta_keywords: req.body.meta_keywords,
     };
     const newsRelease = await NewsRelease.create(data);
 

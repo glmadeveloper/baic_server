@@ -65,7 +65,7 @@ const Model = db.define(
     wheelbase: {
       type: DataTypes.STRING,
     },
-      moreSections: {
+    moreSections: {
       type: DataTypes.JSON,
     },
     designType: {
@@ -86,6 +86,15 @@ const Model = db.define(
         model: "modelCategory",
         key: "id",
       },
+    },
+    meta_description: {
+      type: DataTypes.TEXT,
+    },
+    meta_title: {
+      type: DataTypes.STRING,
+    },
+    meta_keywords: {
+      type: DataTypes.STRING,
     },
   },
   {
@@ -130,7 +139,7 @@ MultiMedia.belongsTo(Model, {
 });
 
 (async () => {
-  await db.sync({alter : true});
+  await db.sync({ alter: true });
 })();
 
 export default Model;

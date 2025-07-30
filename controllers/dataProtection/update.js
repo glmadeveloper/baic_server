@@ -17,6 +17,9 @@ const updateDataProtection = async (req, res) => {
         title_ar: req.body.title_ar,
         description: req.body.description,
         description_ar: req.body.description_ar,
+        meta_description: req.body.meta_description,
+        meta_title: req.body.meta_title,
+        meta_keywords: req.body.meta_keywords,
       };
 
       const dataProtection = await DataProtection.update(data, {

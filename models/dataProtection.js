@@ -18,6 +18,15 @@ const DataProtection = db.define(
     description_ar: {
       type: DataTypes.TEXT("long"),
     },
+    meta_description: {
+      type: DataTypes.TEXT,
+    },
+    meta_title: {
+      type: DataTypes.STRING,
+    },
+    meta_keywords: {
+      type: DataTypes.STRING,
+    },
   },
   {
     freezeTableName: true,

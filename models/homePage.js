@@ -1,11 +1,15 @@
 import { Sequelize } from "sequelize";
 import db from "../config/database.js";
+// import Homepagebaner from "./homePagebaner.js";
 
 const { DataTypes } = Sequelize;
 
 const Homepage = db.define(
   "homepage",
   {
+    banner_image1_mobile: {
+      type: DataTypes.STRING,
+    },
     banner_image1: {
       type: DataTypes.STRING,
     },
@@ -36,6 +40,9 @@ const Homepage = db.define(
     banner_image2: {
       type: DataTypes.STRING,
     },
+    banner_image2_mobile: {
+      type: DataTypes.STRING,
+    },
     banner_image2_title: {
       type: DataTypes.STRING,
     },
@@ -61,6 +68,9 @@ const Homepage = db.define(
       type: DataTypes.STRING,
     },
     banner_image3: {
+      type: DataTypes.STRING,
+    },
+    banner_image3_mobile: {
       type: DataTypes.STRING,
     },
     banner_image3_title: {
@@ -99,12 +109,24 @@ const Homepage = db.define(
     logo: {
       type: DataTypes.STRING,
     },
+    meta_description: {
+      type: DataTypes.TEXT,
+    },
+    meta_title: {
+      type: DataTypes.STRING,
+    },
+    meta_keywords: {
+      type: DataTypes.STRING,
+    },
   },
   {
     freezeTableName: true,
     timestamps: true,
   }
 );
+// Homepage.hasMany(Homepagebaner, { foreignKey: "homepageId", as: "banners" });
+
+// Homepagebaner.belongsTo(Homepage, { foreignKey: "homepageId", as: "homepage" });
 
 (async () => {
   await db.sync();
