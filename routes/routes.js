@@ -83,6 +83,7 @@ import getAllMultiMedia from "../controllers/multiMedia/getAll.js";
 import updateMultiMedia from "../controllers/multiMedia/update.js";
 import deleteMultiMedia from "../controllers/multiMedia/delete.js";
 import login from "../controllers/user/login.js";
+import changepassword from "../controllers/user/changepassword.js";
 import registerUser from "../controllers/user/register.js";
 import verifyToken from "../middlewares/auth.js";
 import createJoinUs from "../controllers/joinUs/create.js";
@@ -515,6 +516,8 @@ router.delete("/homepage/:id", verifyToken, deleteHomepage);
 
 // ROUTES FOR DASHBOARD ==========>
 router.get("/count", verifyToken, count);
+
+router.post("/change-password", verifyToken, changepassword);
 
 router.get('/users', getAllUser);
 
