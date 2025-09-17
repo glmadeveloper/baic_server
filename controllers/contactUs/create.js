@@ -30,7 +30,7 @@ const salesMail = async (req, res) => {
         // user: 'developer@glmaagency.com', // Replace with your SMTP username
         user: 'notification@alshaalimoto.com', // Replace with your SMTP username
         // pass: 'b{%J7#&Ug-i6<8', // Replace with your SMTP password b{%J7#&Ug-i6<8
-        pass: 'Tot66339', // Replace with your SMTP password
+        pass: 'S.643564018255og', // Replace with your SMTP password
       },
     });
     const mailOptions = {

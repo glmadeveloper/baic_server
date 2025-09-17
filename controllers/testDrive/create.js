@@ -30,9 +30,9 @@ const salesMail = async (req, res) => {
       secure: false,
       auth: {
         // user: 'developer@glmaagency.com', // Replace with your SMTP username
-        user: 'notification@alshaalimoto.com', // Replace with your SMTP username
+        user: 'Notification@alshaalimoto.com', // Replace with your SMTP username
         // pass: 'b{%J7#&Ug-i6<8', // Replace with your SMTP password b{%J7#&Ug-i6<8
-        pass: 'Tot66339', // Replace with your SMTP password
+        pass: 'S.643564018255og', // Replace with your SMTP password
       },
     });
     const id = data['modelId']; // Ensure `modelId` is a number
@@ -51,7 +51,7 @@ const salesMail = async (req, res) => {
 
     const mailOptions = {
       // from: 'developer@glmaagency.com',
-      from: 'notification@alshaalimoto.com',
+      from: 'Notification@alshaalimoto.com',
       to: 'crm@alshaalimoto.com,marketing.mgr@alshaalimoto.com,developer.glmadubai@gmail.com',
       // to: 'developer.glmadubai@gmail.com',
       subject: 'Test Drive Responses',

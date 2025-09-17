@@ -35,15 +35,15 @@ const bookServiceMail = async (req, res) => {
       secure: false, // Use `true` for port 465, `false` for all other ports
       auth: {
         // user: 'developer@glmaagency.com', // Replace with your SMTP username
-        user: 'notification@alshaalimoto.com', // Replace with your SMTP username
+        user: 'Notification@alshaalimoto.com', // Replace with your SMTP username
         // pass: 'b{%J7#&Ug-i6<8', // Replace with your SMTP password b{%J7#&Ug-i6<8
-        pass: 'Tot66339', // Replace with your SMTP password
+        pass: 'S.643564018255og', // Replace with your SMTP password
       },
     });
     const mailOptions = {
       // from: 'developer@glmaagency.com',
-      from: 'notification@alshaalimoto.com',
-      to: 'crm@alshaalimoto.com,marketing.mgr@alshaalimoto.com',
+      from: 'Notification@alshaalimoto.com',
+      to: 'crm@alshaalimoto.com,marketing.mgr@alshaalimoto.com,ayman483483@gmail.com',
       subject: 'Booking an Appointment Service',
       text: 'Booking Appointment',
       html: `<div>
@@ -70,10 +70,10 @@ const bookServiceMail = async (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         console.log("ERROR OCCURED WHEN SENDING MAIL!!", error);
-        return;
+        return res.status(500).json({ status: false, message: "Failed to send booking email" });
       }
       console.log("Message sent successfully:", info.response);
-      return;
+      return res.json({ status: true, message: "Booking successfully sent" });
     });
   } catch (error) {
     return res.json({ status: false, message: error.message, code: 500 });
