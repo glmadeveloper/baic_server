@@ -43,7 +43,7 @@ const bookServiceMail = async (req, res) => {
     const mailOptions = {
       // from: 'developer@glmaagency.com',
       from: 'Notification@alshaalimoto.com',
-      to: 'crm@alshaalimoto.com,marketing.mgr@alshaalimoto.com,ayman483483@gmail.com',
+      to: 'crm@alshaalimoto.com,marketing.mgr@alshaalimoto.com',
       subject: 'Booking an Appointment Service',
       text: 'Booking Appointment',
       html: `<div>
